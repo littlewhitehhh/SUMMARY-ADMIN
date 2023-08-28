@@ -8,7 +8,9 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "prettier": "npx prettier  --write ./src",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix --quiet ./src"
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix --quiet ./src",
+    "pre-commit": "pnpm run lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "vue": "^3.3.4"

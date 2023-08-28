@@ -10,7 +10,8 @@
     "prettier": "npx prettier  --write ./src",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix --quiet ./src",
     "pre-commit": "pnpm run lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint:lint-staged": "lint-staged"
   },
   "dependencies": {
     "vue": "^3.3.4"

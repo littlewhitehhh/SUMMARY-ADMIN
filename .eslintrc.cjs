@@ -5,6 +5,7 @@ module.exports = {
     node: true,
     es2021: true
   },
+
   extends: [
     // 这是eslint默认推荐的
     'eslint:recommended',
@@ -12,7 +13,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     // 用来检查vue3
     'plugin:vue/vue3-essential',
-
     // 添加prettier
     // 推荐的prettier配置
     'prettier',
@@ -43,6 +43,7 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error',
     'arrow-body-style': 'off',
-    'prefer-arrow-callback': 'off'
+    'prefer-arrow-callback': 'off',
+    'vue/multi-word-component-names': 'off'
   }
 };

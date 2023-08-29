@@ -1,46 +1,48 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
-    es2021: true,
+    node: true,
+    es2021: true
   },
   extends: [
     // 这是eslint默认推荐的
-    "eslint:recommended",
+    'eslint:recommended',
     // 用来检查ts的
-    "plugin:@typescript-eslint/recommended",
+    'plugin:@typescript-eslint/recommended',
     // 用来检查vue3
-    "plugin:vue/vue3-essential",
-    // 添加prettier
+    'plugin:vue/vue3-essential',
 
+    // 添加prettier
     // 推荐的prettier配置
-    "plugin:prettier/recommended",
-    "prettier",
+    'prettier',
+    'plugin:prettier/recommended'
   ],
   overrides: [
     {
       env: {
-        node: true,
+        node: true
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
-        sourceType: "script",
-      },
-    },
+        sourceType: 'script'
+      }
+    }
   ],
   parserOptions: {
-    ecmaVersion: "latest",
-    parser: "@typescript-eslint/parser",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module'
   },
   plugins: [
-    "@typescript-eslint",
-    "vue",
-    // prettier
-    "prettier",
+    '@typescript-eslint',
+    'vue',
+    'prettier'
+    // 'prettier'
   ],
   rules: {
-    "prettier/prettier": "error",
-    "arrow-body-style": "off",
-    "prefer-arrow-callback": "off",
-  },
+    'prettier/prettier': 'error',
+    'arrow-body-style': 'off',
+    'prefer-arrow-callback': 'off'
+  }
 };

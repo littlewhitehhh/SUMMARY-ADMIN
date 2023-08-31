@@ -1,4 +1,4 @@
-import { defineConfig, normalizePath } from 'vite';
+import { defineConfig, normalizePath, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
 // unocss
@@ -14,7 +14,17 @@ console.log(path.resolve(__dirname, './src/main.ts'));
 console.log('varibaleScssPATH', variableScssPath);
 
 // https://vitejs.dev/config/
-export default defineConfig(() => {
+export default defineConfig(variable => {
+  console.log('variable', variable); //{mode，command，ssrbuild}
+  // loadEnv 加载 envDir 中的 .env
+  const root = process.cwd();
+
+  console.log('root:', root);
+  console.log('__dirname', __dirname);
+
+  const env = loadEnv(variable.mode, __dirname);
+  console.log('env', env);
+
   return {
     css: {
       preprocessorOptions: {
@@ -26,15 +36,6 @@ export default defineConfig(() => {
         // 一般可以通过generateScopeName属性对生成的类名进行自定义
         generateScopedName: '[name]_[local]_[hash64:8]'
       },
-      // postcss: {
-      //   plugins: [
-      //     autoprefixer({
-      //       // 指定目标浏览器
-      //       overrideBrowserslist: ['> 1%', 'last 2 versions']
-      //     })
-      //   ]
-      // }
-
       postcss: {
         plugins: [postcssPresetEnv()]
       }

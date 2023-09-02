@@ -1,8 +1,16 @@
-import autoprefixer from 'autoprefixer';
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+// import { test } from '@/api';
+import { test } from '../../src/api';
+
+const loginTest = async () => {
+  let res = await test();
+  console.log(res);
+};
+</script>
 <template>
   <div id="app">
-    <el-button type="success">123132</el-button>
+    456
+    <el-button type="success" @click="loginTest">123132</el-button>
     <div class="scssTest">scss Test</div>
     <a>test postcss autoprefixer</a>
   </div>

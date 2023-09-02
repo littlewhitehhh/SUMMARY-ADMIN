@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// import { test } from '@/api';
 import HelloWorld from './components/HelloWorld.vue';
 import Login from './components/Login.vue';
 </script>
@@ -13,6 +14,7 @@ import Login from './components/Login.vue';
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  123
   <Login />
 </template>
 

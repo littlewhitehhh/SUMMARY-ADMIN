@@ -8,6 +8,13 @@ import postcssPresetEnv from 'postcss-preset-env';
 // import autoprefixer from 'autoprefixer';
 
 import path from 'path';
+
+// element-plus 按需引入
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+
+// 个人封装
 import { wrapperEnv } from './build/getEnv';
 import { createProxy } from './build/proxy';
 
@@ -62,7 +69,16 @@ export default defineConfig(variable => {
       // }
       proxy: createProxy(ViteEnv.VITE_PROXY)
     },
-    plugins: [vue(), UnoCSS()],
+    plugins: [
+      vue(),
+      UnoCSS(),
+      AutoImport({
+        resolvers: [ElementPlusResolver()]
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()]
+      })
+    ],
     build: {
       rollupOptions: {
         output: {

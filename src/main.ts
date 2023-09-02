@@ -11,7 +11,8 @@ import router from './router';
 // 引入pinia
 import pinia from './store';
 
-import ElementPlus from 'element-plus';
-import 'element-plus/dist/index.css';
+// 全局引入
+// import ElementPlus from 'element-plus';
+// import 'element-plus/dist/index.css';
 
-createApp(App).use(ElementPlus).use(router).use(pinia).mount('#app');
+createApp(App).use(router).use(pinia).mount('#app');

@@ -7,9 +7,9 @@
     "skipLibCheck": true,
     "types": ["vite/client", "element-plus/global"],
 
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "@": ["./src"],
+      "@": ["src"],
       "@/*": ["src/*"]
     },
 

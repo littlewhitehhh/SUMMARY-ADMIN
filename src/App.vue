@@ -5,6 +5,7 @@ import Login from './components/Login.vue';
 </script>
 
 <template>
+  <router-view></router-view>
   <HelloWorld msg="Vite + Vue" />
   123
   <Login />

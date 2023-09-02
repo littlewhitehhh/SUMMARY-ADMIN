@@ -1,7 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import type { RouteRecordRaw } from 'vue-router';
 
-const routes: RouteRecordRaw[] = [];
+import { staticRouters } from './modules/staticRouters';
+const routes: RouteRecordRaw[] = [...staticRouters];
 
 const router = createRouter({
   routes,

@@ -2,7 +2,8 @@ import { defineConfig, normalizePath, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
 // unocss
-import UnoCSS from 'unocss/vite';
+// import UnoCSS from 'unocss/vite';
+
 // postcss
 import postcssPresetEnv from 'postcss-preset-env';
 // import autoprefixer from 'autoprefixer';
@@ -71,22 +72,23 @@ export default defineConfig(variable => {
     },
     plugins: [
       vue(),
-      UnoCSS(),
+      // unocss插件
+      // UnoCSS(),
       AutoImport({
         resolvers: [ElementPlusResolver()]
       }),
       Components({
         resolvers: [ElementPlusResolver()]
       })
-    ],
-    build: {
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            elementPlus: ['element-plus']
-          }
-        }
-      }
-    }
+    ]
+    // build: {
+    //   rollupOptions: {
+    //     output: {
+    //       manualChunks: {
+    //         elementPlus: ['element-plus']
+    //       }
+    //     }
+    //   }
+    // }
   };
 });

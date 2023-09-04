@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@commitlint/cli': ^17.7.1
   '@commitlint/config-conventional': ^17.7.0
+  '@types/js-md5': ^0.7.0
   '@types/node': ^20.5.7
   '@typescript-eslint/eslint-plugin': ^6.4.1
   '@typescript-eslint/parser': ^6.4.1
@@ -48,6 +49,7 @@ dependencies:
 devDependencies:
   '@commitlint/cli': 17.7.1
   '@commitlint/config-conventional': 17.7.0
+  '@types/js-md5': 0.7.0
   '@types/node': 20.5.7
   '@typescript-eslint/eslint-plugin': 6.4.1_f6f49493214ea1d9dfa42e95ebd28132
   '@typescript-eslint/parser': 6.4.1_eslint@8.48.0+typescript@5.2.2
@@ -1051,6 +1053,10 @@ packages:
 
   /@types/estree/1.0.1:
     resolution: { integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA== }
+    dev: true
+
+  /@types/js-md5/0.7.0:
+    resolution: { integrity: sha512-4mN02EhCni6MlvCUl9bpcbMfu7R3G+ac+J37b7gKCu3tWhZc5/Ya41T+2QNR2aFt6vnMe+uTa5rFQ+nT2kl6cA== }
     dev: true
 
   /@types/json-schema/7.0.12:

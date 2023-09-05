@@ -1,10 +1,11 @@
 import type { RouteRecordRaw } from 'vue-router';
 
 export const staticRouters: RouteRecordRaw[] = [
-  // {
-  //   path: '/',
-  //   redirect: '/home'
-  // },
+  // 默认情况下去home
+  {
+    path: '/',
+    redirect: '/home'
+  },
   // 登录
   {
     path: '/login',

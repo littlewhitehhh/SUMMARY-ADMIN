@@ -18,5 +18,13 @@ import pinia from './store';
 // 全局引入
 // import ElementPlus from 'element-plus';
 // import 'element-plus/dist/index.css';
+import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 
-createApp(App).use(router).use(pinia).mount('#app');
+const app = createApp(App);
+
+// element-plus icon svg
+for (const [key, conmpnent] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, conmpnent);
+}
+
+app.use(router).use(pinia).mount('#app');

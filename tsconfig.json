@@ -6,7 +6,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "types": ["vite/client", "element-plus/global"],
-    "allowSyntheticDefaultImports": true,
+    // "allowSyntheticDefaultImports": true,
 
     "baseUrl": "./",
     "paths": {
@@ -30,5 +30,6 @@
     // "noImplicitAny":false
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "build/**/*.ts", "vite.config.ts"],
+  "exclude": ["node_modules", "dist", "**/*.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

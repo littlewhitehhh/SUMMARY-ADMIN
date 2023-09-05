@@ -1,6 +1,15 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import LoginForm from './component/loginForm.vue';
+</script>
 <template>
-  <div class="login">我是登录页面</div>
+  <div class="login">
+    <div class="dark">123</div>
+    <div class="login_box">
+      <LoginForm></LoginForm>
+    </div>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+@import './style/index.scss';
+</style>

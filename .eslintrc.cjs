@@ -45,6 +45,9 @@ module.exports = {
     'arrow-body-style': 'off',
     'prefer-arrow-callback': 'off',
     'vue/multi-word-component-names': 'off',
-    '@typescript-eslint/no-explicit-any': ['off']
+    '@typescript-eslint/no-explicit-any': ['off'],
+
+    // typescript
+    '@typescript-eslint/no-namespace': 'off' // 禁止使用自定义 TypeScript 模块和命名空间
   }
 };

@@ -11,7 +11,7 @@ const router = createRouter({
 
 router.beforeEach(to => {
   // 获取缓存token
-  const token = undefined;
+  const token = '123';
   if (!token && to.path !== '/login') {
     return { name: 'login' };
   }

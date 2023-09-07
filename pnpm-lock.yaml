@@ -26,6 +26,7 @@ specifiers:
   js-md5: ^0.7.3
   lint-staged: ^14.0.1
   pinia: ^2.1.6
+  pinia-plugin-persistedstate: ^3.2.0
   postcss: ^8.4.29
   postcss-preset-env: ^9.1.2
   prettier: 3.0.2
@@ -45,6 +46,7 @@ dependencies:
   element-plus: 2.3.12_vue@3.3.4
   js-md5: 0.7.3
   pinia: 2.1.6_typescript@5.2.2+vue@3.3.4
+  pinia-plugin-persistedstate: 3.2.0_pinia@2.1.6
   vue: 3.3.4
   vue-router: 4.2.4_vue@3.3.4
 
@@ -3995,6 +3997,14 @@ packages:
     engines: { node: '>=0.10' }
     hasBin: true
     dev: true
+
+  /pinia-plugin-persistedstate/3.2.0_pinia@2.1.6:
+    resolution: { integrity: sha512-tZbNGf2vjAQcIm7alK40sE51Qu/m9oWr+rEgNm/2AWr1huFxj72CjvpQcIQzMknDBJEkQznCLAGtJTIcLKrKdw== }
+    peerDependencies:
+      pinia: ^2.0.0
+    dependencies:
+      pinia: 2.1.6_typescript@5.2.2+vue@3.3.4
+    dev: false
 
   /pinia/2.1.6_typescript@5.2.2+vue@3.3.4:
     resolution: { integrity: sha512-bIU6QuE5qZviMmct5XwCesXelb5VavdOWKWaB17ggk++NUwQWWbP5YnsONTk3b752QkW9sACiR81rorpeOMSvQ== }

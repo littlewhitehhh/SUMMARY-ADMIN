@@ -1,8 +1,9 @@
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import md5 from 'js-md5';
 import { ResultData } from './types/index';
-
+import { useUserStore } from '@/store/modules/uers';
 // import { ResultEnum } from '@/enums/httpsEnums';
+
 export interface CustomAxiosRequestConfig extends InternalAxiosRequestConfig {
   noLoading?: boolean;
 }
@@ -56,8 +57,9 @@ class HttpRequest {
      */
     this.service.interceptors.request.use(
       (config: CustomAxiosRequestConfig) => {
+        const userStore = useUserStore();
         if (config.headers && typeof config.headers.set === 'function') {
-          config.headers.set('x-access-token', 'tttt');
+          config.headers.set('x-access-token', userStore.token);
         }
 
         return config;

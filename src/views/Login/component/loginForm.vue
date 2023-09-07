@@ -4,19 +4,26 @@ import type { FormInstance, FormRules } from 'element-plus';
 import { User, Lock, CircleClose, UserFilled } from '@element-plus/icons-vue';
 import { LoginApi } from '@/api/module/login';
 import md5 from 'js-md5';
-interface RuleForm {
-  username: string;
-  password: string;
-}
+import { useRouter } from 'vue-router';
+import { useUserStore } from '@/store/modules/uers';
+import { Login } from '@/api/types/index';
+import { initDynamicRouter } from '@/router/modules/dynamicRouters';
+// interface RuleForm {
+//   username: string;
+//   password: string;
+// }
 
+const userStore = useUserStore();
+
+const router = useRouter();
 const formSize = ref('default');
 const ruleFormRef = ref<FormInstance>();
-const ruleForm = reactive<RuleForm>({
-  username: '',
-  password: ''
+const ruleForm = reactive<Login.ReqLoginForm>({
+  username: 'admin',
+  password: '123456'
 });
 
-const rules = reactive<FormRules<RuleForm>>({
+const rules = reactive<FormRules<Login.ReqLoginForm>>({
   username: [{ required: true, message: '请输入正确的用户名', trigger: 'blur' }],
   password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
 });
@@ -31,14 +38,18 @@ const login = async (formEl: FormInstance | undefined) => {
     try {
       console.log('submit');
       // 1、执行登录接口
-      const res = await LoginApi({ ...ruleForm, password: md5(ruleForm.password) });
-      console.log(res);
+      const { data } = await LoginApi({ ...ruleForm, password: md5(ruleForm.password) });
+      // console.log(data);
 
-      // 2、动态添加路由
-
+      // 将token存储到pinia 持久化了
+      userStore.setToken(data.access_token);
+      // console.log(userStore);
+      // 2、添加动态路由   进行动态路由的请求和合并
+      await initDynamicRouter();
       // 3、清空tabs、keepAlie
 
-      // 4、跳转大屏首页
+      // 4、跳转首页
+      router.push('/layout');
     } catch {
       console.log('Error login', fields);
     } finally {

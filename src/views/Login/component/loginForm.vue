@@ -8,10 +8,7 @@ import { useRouter } from 'vue-router';
 import { useUserStore } from '@/store/modules/uers';
 import { Login } from '@/api/types/index';
 import { initDynamicRouter } from '@/router/modules/dynamicRouters';
-// interface RuleForm {
-//   username: string;
-//   password: string;
-// }
+import { onMounted } from 'vue';
 
 const userStore = useUserStore();
 
@@ -62,6 +59,17 @@ const resetForm = (formEl: FormInstance) => {
   if (!formEl) return;
   formEl.resetFields();
 };
+
+// 键盘
+onMounted(() => {
+  // 监听enter事件
+  document.onkeydown = (e: KeyboardEvent) => {
+    e = (window.event as KeyboardEvent) || e;
+    if (e.code === 'Enter' || e.code === 'enter' || e.code === 'NumpadEnter') {
+      login(ruleFormRef.value);
+    }
+  };
+});
 </script>
 <template>
   <div class="loginContainer">

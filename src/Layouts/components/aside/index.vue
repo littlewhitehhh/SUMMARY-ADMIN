@@ -1,26 +1,20 @@
 <script lang="ts" setup>
 import { useAuthStore } from '@/store/modules/auth';
 import { computed } from 'vue';
+import subMenuItem from './subMenuItem.vue';
 
 const authStore = useAuthStore();
-const handleOpen = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath);
-};
-const handleClose = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath);
-};
-
-const authMenuList = authStore.authMenuList;
+const authMenuList = computed(() => authStore.showAuthMenuListGet);
 console.log(authMenuList);
-console.log(authStore);
-console.log(authStore.authMenuList); // 没有数据  请求发生在initDynamicRouter之前
-console.log(authStore.authMenuListGet);
-console.log(computed(() => authStore.authMenuListGet));
+// console.log(authStore);
+// console.log(authStore.authMenuList); // 没有数据  请求发生在initDynamicRouter之前
+// console.log(authStore.authMenuListGet);
+// console.log(computed(() => authStore.authMenuListGet));
 </script>
 
 <template>
-  <el-menu default-active="2" class="el-menu-vertical-demo" router @open="handleOpen" @close="handleClose">
-    <template v-for="item in authMenuList" :key="item.path">
+  <el-menu default-active="2" class="el-menu-vertical-demo" router>
+    <!-- <template v-for="item in authMenuList" :key="item.path">
       <template v-if="item.children">
         <el-sub-menu :index="item.path">
           <template #title>
@@ -41,6 +35,7 @@ console.log(computed(() => authStore.authMenuListGet));
           <span>{{ item.meta.title }}</span>
         </el-menu-item>
       </template>
-    </template>
+    </template> -->
+    <subMenuItem :MenuList="authMenuList"></subMenuItem>
   </el-menu>
 </template>

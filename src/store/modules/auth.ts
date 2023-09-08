@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 // import piniaPersistConfig from '@/config/piniaPersist';
 import { AuthState } from '../interface';
+import { getShowMenuList, getFlatMenuList } from '@/utils';
 
 export const useAuthStore = defineStore({
   id: 'summaty-admin-auth',
@@ -12,11 +13,20 @@ export const useAuthStore = defineStore({
   },
 
   getters: {
-    authMenuListGet: state => state.authMenuList
+    // 菜单权限列表 ==> 左侧菜单栏渲染，需要剔除 isHide == true
+    showAuthMenuListGet: state => getShowMenuList(state.authMenuList),
+    // 菜单权限列表 ==> 用于渲染路由，将深层的menuList flat扁平化，用于动态添加路由
+    flatAuthMenuListGet: state => {
+      const res = getFlatMenuList(state.authMenuList);
+      console.log('flatAuthMenuListGet', res);
+      return res;
+    }
   },
   actions: {
     //存储菜单
     setAuthMenuList(menuList) {
+      console.log('auth', menuList);
+
       this.authMenuList = menuList;
     }
   }

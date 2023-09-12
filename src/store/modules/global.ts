@@ -5,7 +5,8 @@ export const useGlobalStore = defineStore({
   id: 'globalStore',
   state: (): GlobalState => {
     return {
-      isCollapse: false
+      isCollapse: false,
+      breadcrumbIcon: true
     };
   },
   getters: {

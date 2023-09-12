@@ -2,6 +2,7 @@
 
 export interface GlobalState {
   isCollapse: boolean;
+  breadcrumbIcon: boolean;
 }
 
 /*UserState */

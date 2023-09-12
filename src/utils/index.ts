@@ -39,7 +39,7 @@ export const getAllBreadcrumbList = (menulist: Menu.AuthMenuListItem[], parent =
     result[item.path] = [...parent, item];
     if (item.children) getAllBreadcrumbList(item.children, result[item.path], result);
   }
-  console.log(result);
+  // console.log(result);
 
   return result;
 };

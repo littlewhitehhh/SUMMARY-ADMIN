@@ -7,7 +7,9 @@ import { Menu } from '@/store/interface/index';
  * @returns {Array}
  */
 export const getShowMenuList = (menuList: Menu.AuthMenuListItem[]) => {
-  const newMenuList: Menu.AuthMenuListItem[] = JSON.parse(JSON.stringify(menuList));
+  const newMenuList: Menu.AuthMenuListItem[] = JSON.parse(
+    JSON.stringify(menuList)
+  );
 
   return newMenuList.filter(item => {
     item.children?.length && (item.children = getShowMenuList(item.children));
@@ -21,7 +23,35 @@ export const getShowMenuList = (menuList: Menu.AuthMenuListItem[]) => {
  * @return  {Array}
  */
 export const getFlatMenuList = (menuList: Menu.AuthMenuListItem[]) => {
-  const newMenuList: Menu.AuthMenuListItem[] = JSON.parse(JSON.stringify(menuList));
+  const newMenuList: Menu.AuthMenuListItem[] = JSON.parse(
+    JSON.stringify(menuList)
+  );
   // return newMenuList.flat(Infinity);
-  return newMenuList.flatMap(item => [item, ...(item.children ? getFlatMenuList(item.children) : [])]);
+  return newMenuList.flatMap(item => [
+    item,
+    ...(item.children ? getFlatMenuList(item.children) : [])
+  ]);
+};
+
+/**
+ * @description 使用递归找出所有面包屑存储到 pinia/vuex 中
+ * @param {Array} menuList
+ * @param {Array} parent 父级菜单
+ * @param {Object} result 处理后的结果
+ * @returns {Object}
+ */
+
+export const getAllBreadcrumbList = (
+  menulist: Menu.AuthMenuListItem[],
+  parent = [],
+  result: { [key: string]: any } = {}
+) => {
+  for (const item of menulist) {
+    result[item.path] = [...parent, item];
+    if (item.children)
+      getAllBreadcrumbList(item.children, result[item.path], result);
+  }
+  console.log(result);
+
+  return result;
 };

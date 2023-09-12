@@ -1,0 +1,11 @@
+.tool-bar-left {
+  // height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .el-icon {
+    margin-right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+}

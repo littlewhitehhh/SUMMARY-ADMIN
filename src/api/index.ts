@@ -1,5 +1,11 @@
-import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
-import md5 from 'js-md5';
+import axios, {
+  AxiosError,
+  AxiosInstance,
+  AxiosRequestConfig,
+  AxiosResponse,
+  InternalAxiosRequestConfig
+} from 'axios';
+// import md5 from 'js-md5';
 import { ResultData } from './types/index';
 import { useUserStore } from '@/store/modules/uers';
 // import { ResultEnum } from '@/enums/httpsEnums';
@@ -38,7 +44,7 @@ export interface CustomAxiosRequestConfig extends InternalAxiosRequestConfig {
 
 const config = {
   baseURL: import.meta.env.VITE_API_URL as string,
-  timeout: 3000,
+  timeout: 5000,
   withCredentials: true //是否跨域？
 };
 
@@ -110,7 +116,11 @@ class HttpRequest {
     return this.service.get(url, { params, ..._object });
   }
 
-  post<T>(url: string, params?: object | string, _object = {}): Promise<ResultData<T>> {
+  post<T>(
+    url: string,
+    params?: object | string,
+    _object = {}
+  ): Promise<ResultData<T>> {
     return this.service.post(url, params, _object);
   }
   put<T>(url: string, params?: object, _object = {}): Promise<ResultData<T>> {
@@ -125,23 +135,23 @@ class HttpRequest {
 }
 
 export default new HttpRequest(config);
-const Request = new HttpRequest(config);
+// const Request = new HttpRequest(config);
 
-export const test = () => {
-  // console.log('test');
+// export const test = () => {
+//   // console.log('test');
 
-  Request.post('/geeker/login', {
-    username: 'admin',
-    password: md5('123456')
-  }).then(res => {
-    console.log(res);
-  });
-};
+//   Request.post('/geeker/login', {
+//     username: 'admin',
+//     password: md5('123456')
+//   }).then(res => {
+//     console.log(res);
+//   });
+// };
 
-export const test2 = () => {
-  console.log('test');
+// export const test2 = () => {
+//   console.log('test');
 
-  Request.get('/geeker/menu/list').then(res => {
-    console.log(res);
-  });
-};
+//   Request.get('/geeker/menu/list').then(res => {
+//     console.log(res);
+//   });
+// };

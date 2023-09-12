@@ -3,10 +3,10 @@ import type { RouteRecordRaw } from 'vue-router';
 import { useUserStore } from '@/store/modules/uers';
 import { useAuthStore } from '@/store/modules/auth';
 
-import { staticRouters } from './modules/staticRouters';
+import { staticRouters, errorRouters } from './modules/staticRouters';
 import { initDynamicRouter } from './modules/dynamicRouters';
 
-const routes: RouteRecordRaw[] = [...staticRouters];
+const routes: RouteRecordRaw[] = [...staticRouters, ...errorRouters];
 
 const router = createRouter({
   routes,
@@ -21,6 +21,10 @@ router.beforeEach(async (to, from) => {
     resetRouter();
     return true;
   }
+  // 动态设置标题
+  const title = import.meta.env.VITE_GLOB_APP_TITLE;
+  document.title = to.meta.title ? `${to.meta.title} - ${title}` : title;
+
   if (!userStore.token) return { path: '/login', replace: true };
 
   if (!authStore.authMenuList.length) {
@@ -29,7 +33,6 @@ router.beforeEach(async (to, from) => {
   }
 });
 
-export default router;
 /**
  * @description 重置路由
  */
@@ -40,3 +43,19 @@ export const resetRouter = () => {
     if (name && router.hasRoute(name)) router.removeRoute(name);
   });
 };
+
+/**
+ * @description 路由跳转错误
+ */
+router.onError(error => {
+  console.warn('路由错误', error.message);
+});
+
+/**
+ * @description 路由跳转结束
+ */
+router.afterEach(() => {
+  // 这里优化有关 添加progress进度条等
+});
+
+export default router;

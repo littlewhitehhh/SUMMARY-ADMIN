@@ -1,3 +1,9 @@
+/* globalState */
+
+export interface GlobalState {
+  isCollapse: boolean;
+}
+
 /*UserState */
 
 export interface UserState {
@@ -33,3 +39,5 @@ export namespace Menu {
 export interface AuthState {
   authMenuList: Menu.AuthMenuListItem[];
 }
+
+//

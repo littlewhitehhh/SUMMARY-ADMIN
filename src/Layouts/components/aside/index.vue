@@ -1,11 +1,14 @@
 <script lang="ts" setup>
 import { useAuthStore } from '@/store/modules/auth';
+import { useGlobalStore } from '@/store/modules/global';
 import { computed } from 'vue';
 import subMenuItem from './subMenuItem.vue';
 
 const authStore = useAuthStore();
+const globalStore = useGlobalStore();
 const authMenuList = computed(() => authStore.showAuthMenuListGet);
-console.log(authMenuList);
+const isCollapse = computed(() => globalStore.isCollapse);
+// console.log(authMenuList);
 // console.log(authStore);
 // console.log(authStore.authMenuList); // 没有数据  请求发生在initDynamicRouter之前
 // console.log(authStore.authMenuListGet);
@@ -13,7 +16,14 @@ console.log(authMenuList);
 </script>
 
 <template>
-  <el-menu default-active="2" class="el-menu-vertical-demo" router>
+  <el-menu
+    default-active="2"
+    class="el-menu-vertical-demo"
+    router
+    :collapse="isCollapse"
+    :collapse-transition="false"
+    :unique-opened="true"
+  >
     <!-- <template v-for="item in authMenuList" :key="item.path">
       <template v-if="item.children">
         <el-sub-menu :index="item.path">
@@ -39,3 +49,9 @@ console.log(authMenuList);
     <subMenuItem :MenuList="authMenuList"></subMenuItem>
   </el-menu>
 </template>
+
+<style lang="scss" scoped>
+.el-menu {
+  border-right: none;
+}
+</style>

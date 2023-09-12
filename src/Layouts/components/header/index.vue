@@ -11,9 +11,7 @@ const changeCollapse = () => {
 </script>
 <template>
   <div class="tool-bar-left">
-    <el-icon v-if="!isCollapse" @click="changeCollapse" size="22px"
-      ><Fold
-    /></el-icon>
+    <el-icon v-if="!isCollapse" @click="changeCollapse" size="22px"><Fold /></el-icon>
     <el-icon v-else @click="changeCollapse" size="22px"><Expand /></el-icon>
 
     <!-- TODO 面包屑导航 -->

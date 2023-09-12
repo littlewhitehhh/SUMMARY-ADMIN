@@ -19,15 +19,10 @@ watch(route, () => {
 
 const breadCrumbList = computed(() => {
   // 什么是 route.matched
-  let breadCrumbData =
-    authStore.breadCrumbListGet[route.matched[route.matched.length - 1].path] ??
-    [];
+  let breadCrumbData = authStore.breadCrumbListGet[route.matched[route.matched.length - 1].path] ?? [];
 
   if (breadCrumbData[0].path != HOME_URL) {
-    breadCrumbData = [
-      { path: HOME_URL, meta: { icon: 'HomeFilled', title: '首页' } },
-      ...breadCrumbData
-    ];
+    breadCrumbData = [{ path: HOME_URL, meta: { icon: 'HomeFilled', title: '首页' } }, ...breadCrumbData];
   }
   return breadCrumbData;
 });

@@ -1,10 +1,4 @@
-import axios, {
-  AxiosError,
-  AxiosInstance,
-  AxiosRequestConfig,
-  AxiosResponse,
-  InternalAxiosRequestConfig
-} from 'axios';
+import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 // import md5 from 'js-md5';
 import { ResultData } from './types/index';
 import { useUserStore } from '@/store/modules/uers';
@@ -116,11 +110,7 @@ class HttpRequest {
     return this.service.get(url, { params, ..._object });
   }
 
-  post<T>(
-    url: string,
-    params?: object | string,
-    _object = {}
-  ): Promise<ResultData<T>> {
+  post<T>(url: string, params?: object | string, _object = {}): Promise<ResultData<T>> {
     return this.service.post(url, params, _object);
   }
   put<T>(url: string, params?: object, _object = {}): Promise<ResultData<T>> {

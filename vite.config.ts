@@ -19,9 +19,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import { wrapperEnv } from './build/getEnv';
 import { createProxy } from './build/proxy';
 
-const variableScssPath = normalizePath(
-  path.resolve(__dirname, './src/style/variable.scss')
-);
+const variableScssPath = normalizePath(path.resolve(__dirname, './src/style/variable.scss'));
 // console.log(path.resolve(__dirname, './src/main.ts'));
 // console.log('varibaleScssPATH', variableScssPath);
 

@@ -16,8 +16,7 @@ function wrapperEnv(envConfig) {
   const ret = {};
   for (const key of Object.keys(envConfig)) {
     let realVale = envConfig[key].replace(/\\n/g, '\n');
-    realVale =
-      realVale === 'true' ? true : realVale === 'false' ? false : realVale;
+    realVale = realVale === 'true' ? true : realVale === 'false' ? false : realVale;
     if (key === 'VITE_PORT') realVale = Number(realVale);
     if (key === 'VITE_PROXY') {
       try {
@@ -50,11 +49,8 @@ var createProxy = proxyEnv => {
 };
 
 // vite.config.ts
-var __vite_injected_original_dirname =
-  'H:\\program\\vite-admin\\vite-vue3-typescript-admin\\summary-admin';
-var variableScssPath = normalizePath(
-  path.resolve(__vite_injected_original_dirname, './src/style/variable.scss')
-);
+var __vite_injected_original_dirname = 'H:\\program\\vite-admin\\vite-vue3-typescript-admin\\summary-admin';
+var variableScssPath = normalizePath(path.resolve(__vite_injected_original_dirname, './src/style/variable.scss'));
 var vite_config_default = defineConfig(variable => {
   const env = loadEnv(variable.mode, __vite_injected_original_dirname);
   const ViteEnv = wrapperEnv(env);

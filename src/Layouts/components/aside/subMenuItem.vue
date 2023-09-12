@@ -11,9 +11,7 @@ const props = defineProps<{
     <template v-if="item.children?.length">
       <el-sub-menu :index="item.path">
         <template #title>
-          <el-icon size="large"
-            ><component :is="item.meta.icon"></component
-          ></el-icon>
+          <el-icon size="large"><component :is="item.meta.icon"></component></el-icon>
           <span>{{ item.meta.title }}</span>
         </template>
         <subMenuItem :MenuList="item.children"></subMenuItem>
@@ -21,9 +19,7 @@ const props = defineProps<{
     </template>
     <template v-else>
       <el-menu-item :index="item.path">
-        <el-icon size="large"
-          ><component :is="item.meta.icon"></component
-        ></el-icon>
+        <el-icon size="large"><component :is="item.meta.icon"></component></el-icon>
         <span>{{ item.meta.title }}</span>
       </el-menu-item>
     </template>

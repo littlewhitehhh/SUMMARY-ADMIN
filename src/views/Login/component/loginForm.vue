@@ -21,9 +21,7 @@ const ruleForm = reactive<Login.ReqLoginForm>({
 });
 
 const rules = reactive<FormRules<Login.ReqLoginForm>>({
-  username: [
-    { required: true, message: '请输入正确的用户名', trigger: 'blur' }
-  ],
+  username: [{ required: true, message: '请输入正确的用户名', trigger: 'blur' }],
   password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
 });
 
@@ -89,20 +87,9 @@ onMounted(() => {
         <div class="title">Summary-Admin</div>
       </div>
       <div class="login_form">
-        <el-form
-          ref="ruleFormRef"
-          :model="ruleForm"
-          :rules="rules"
-          class="demo-ruleForm"
-          :size="formSize"
-        >
+        <el-form ref="ruleFormRef" :model="ruleForm" :rules="rules" class="demo-ruleForm" :size="formSize">
           <el-form-item prop="name">
-            <el-input
-              v-model="ruleForm.username"
-              :prefix-icon="User"
-              placeholder="用户名："
-              size="large"
-            />
+            <el-input v-model="ruleForm.username" :prefix-icon="User" placeholder="用户名：" size="large" />
           </el-form-item>
           <el-form-item prop="password">
             <el-input
@@ -117,21 +104,8 @@ onMounted(() => {
         </el-form>
       </div>
       <div class="login_submit">
-        <el-button
-          size="large"
-          :icon="CircleClose"
-          round
-          @click="resetForm(ruleFormRef)"
-          >重置</el-button
-        >
-        <el-button
-          size="large"
-          :icon="UserFilled"
-          round
-          type="primary"
-          @click="login(ruleFormRef)"
-          >提交</el-button
-        >
+        <el-button size="large" :icon="CircleClose" round @click="resetForm(ruleFormRef)">重置</el-button>
+        <el-button size="large" :icon="UserFilled" round type="primary" @click="login(ruleFormRef)">提交</el-button>
       </div>
     </div>
   </div>

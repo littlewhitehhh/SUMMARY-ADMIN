@@ -1,11 +1,7 @@
 import { defineStore } from 'pinia';
 // import piniaPersistConfig from '@/config/piniaPersist';
 import { AuthState } from '../interface';
-import {
-  getShowMenuList,
-  getFlatMenuList,
-  getAllBreadcrumbList
-} from '@/utils';
+import { getShowMenuList, getFlatMenuList, getAllBreadcrumbList } from '@/utils';
 
 export const useAuthStore = defineStore({
   id: 'summaty-admin-auth',

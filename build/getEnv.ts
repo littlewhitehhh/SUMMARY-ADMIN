@@ -7,8 +7,7 @@ export function wrapperEnv(envConfig: Recordable): ViteEnv {
     // 这个正则是干啥的？
     let realVale = envConfig[key].replace(/\\n/g, '\n');
 
-    realVale =
-      realVale === 'true' ? true : realVale === 'false' ? false : realVale;
+    realVale = realVale === 'true' ? true : realVale === 'false' ? false : realVale;
     if (key === 'VITE_PORT') realVale = Number(realVale);
     if (key === 'VITE_PROXY') {
       try {

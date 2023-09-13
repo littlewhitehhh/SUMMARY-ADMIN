@@ -6,7 +6,8 @@ export const useGlobalStore = defineStore({
   state: (): GlobalState => {
     return {
       isCollapse: false,
-      breadcrumbIcon: true
+      breadcrumbIcon: true,
+      assemblySize: 'default'
     };
   },
   getters: {
@@ -15,6 +16,9 @@ export const useGlobalStore = defineStore({
   actions: {
     changeCollapse() {
       this.isCollapse = !this.isCollapse;
+    },
+    setAssemblySize(size) {
+      this.assemblySize = size;
     }
   }
 });

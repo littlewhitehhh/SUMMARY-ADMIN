@@ -6,6 +6,8 @@ import App from './App.vue';
 import '@/style/reset.scss';
 import '@/style/common.scss';
 
+// iconfont scss
+import '@/assets/iconfont/iconfont.scss';
 // 添加unocss样式
 // import 'virtual:uno.css';
 

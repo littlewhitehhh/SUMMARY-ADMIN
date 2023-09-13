@@ -1,8 +1,10 @@
 /* globalState */
+export type AssemblySizeType = 'large' | 'default' | 'small';
 
 export interface GlobalState {
   isCollapse: boolean;
   breadcrumbIcon: boolean;
+  assemblySize: AssemblySizeType;
 }
 
 /*UserState */

@@ -5,6 +5,7 @@ export interface GlobalState {
   isCollapse: boolean;
   breadcrumbIcon: boolean;
   assemblySize: AssemblySizeType;
+  language: 'zh' | 'en';
 }
 
 /*UserState */

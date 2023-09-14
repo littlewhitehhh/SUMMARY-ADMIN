@@ -18,9 +18,11 @@
   .header-icon {
     display: flex;
     justify-content: center;
+    & > * {
+      margin-left: 21px;
+    }
     .toolBar-icon {
       color: var(--el-text-color-primary);
-      margin-left: 21px;
     }
   }
   .user {

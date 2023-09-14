@@ -19,7 +19,8 @@ const setAssemblySize = (size: AssemblySizeType) => {
   // TODO 修改整体样式吧  具体怎么做呢？
   if (currentSize.value === size) return;
   // currentSize.value = size;
-  globalStore.setAssemblySize(size);
+  // globalStore.setAssemblySize(size);
+  globalStore.setGlobalState('assemblySize', size);
 };
 </script>
 <template>

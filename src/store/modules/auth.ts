@@ -15,12 +15,13 @@ export const useAuthStore = defineStore({
   getters: {
     // 菜单权限列表 ==> 左侧菜单栏渲染，需要剔除 isHide == true
     showAuthMenuListGet: state => getShowMenuList(state.authMenuList),
-    // 菜单权限列表 ==> 用于渲染路由，将深层的menuList flat扁平化，用于动态添加路由
+
     // flatAuthMenuListGet: state => {
     //   const res = getFlatMenuList(state.authMenuList);
     //   // console.log('flatAuthMenuListGet', res);
     //   return res;
     // },
+    // 菜单权限列表 ==> 用于渲染路由，将深层的menuList flat扁平化，用于动态添加路由 将返回的路由的component变为懒加载模式
     flatAuthMenuListGet: state => getFlatMenuList(state.authMenuList),
 
     // 面包屑导航

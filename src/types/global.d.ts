@@ -17,3 +17,8 @@ declare interface ViteEnv {
   VITE_API_URL: string;
   VITE_PROXY: [string, string][];
 }
+
+// generic Tools 通用
+type ObjToKeyValArray<T> = {
+  [K in keyof T]: [K, T[K]];
+}[keyof T];

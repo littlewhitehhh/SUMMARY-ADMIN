@@ -6,6 +6,17 @@ export interface GlobalState {
   breadcrumbIcon: boolean;
   assemblySize: AssemblySizeType;
   language: 'zh' | 'en';
+  layout: 'vertical' | 'classic' | 'transverse' | 'columns';
+  isGrey: boolean;
+  isDark: boolean;
+  isWeak: boolean;
+  asideInverted: boolean;
+  breadCrumb: boolean;
+  tabs: boolean;
+  tabsIcon: boolean;
+  footer: boolean;
+  maximize: boolean;
+  primary: string;
 }
 
 /*UserState */

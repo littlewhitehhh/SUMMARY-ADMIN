@@ -3,11 +3,11 @@ import { computed } from 'vue';
 import { useGlobalStore } from '@/store/modules/global';
 import breadCrumb from './components/breadCrumb.vue';
 import AssemblySize from './components/assemblySize.vue';
-import Language from './components/Language.vue';
+import Language from './components/language.vue';
 import SearchMenu from './components/searchMenu.vue';
-import ThemeSetting from './components/ThemeSetting.vue';
-import Message from './components/Message.vue';
-import Fullscreen from './components/fullscreen.vue';
+import ThemeSetting from './components/themeSetting.vue';
+import Message from './components/message.vue';
+import Fullscreen from './components/fullScreen.vue';
 
 const globalStore = useGlobalStore();
 const isCollapse = computed(() => globalStore.isCollapse);

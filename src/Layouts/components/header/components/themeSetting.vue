@@ -35,12 +35,12 @@ const handleOpen = () => {
   drawerVisible.value = true;
 };
 
-const resetClick = () => {
-  console.log('重置');
-};
-const confirmClick = () => {
-  console.log('确定');
-};
+// const resetClick = () => {
+//   console.log('重置');
+// };
+// const confirmClick = () => {
+//   console.log('确定');
+// };
 
 // const setLayout = (value: layoutValue) => {
 //   // layout.value = value;
@@ -217,12 +217,12 @@ const confirmClick = () => {
           <el-switch v-model="footer" size="large" />
         </div>
       </template>
-      <template #footer>
+      <!-- <template #footer>
         <div style="flex: auto">
           <el-button @click="resetClick">重置</el-button>
           <el-button type="primary" @click="confirmClick">确定</el-button>
         </div>
-      </template>
+      </template> -->
     </el-drawer>
   </div>
 </template>

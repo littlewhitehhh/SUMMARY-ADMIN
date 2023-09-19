@@ -8,6 +8,7 @@ import SearchMenu from './components/searchMenu.vue';
 import ThemeSetting from './components/themeSetting.vue';
 import Message from './components/message.vue';
 import Fullscreen from './components/fullScreen.vue';
+import Avatar from './components/avatar.vue';
 
 const globalStore = useGlobalStore();
 const isCollapse = computed(() => globalStore.isCollapse);
@@ -34,8 +35,9 @@ const changeCollapse = () => {
     </div>
 
     <div class="user">
-      <span class="username">one-tow-three</span>
+      <span class="username">Aky</span>
       <!-- TODO 头像功能 -->
+      <Avatar></Avatar>
     </div>
   </div>
 </template>

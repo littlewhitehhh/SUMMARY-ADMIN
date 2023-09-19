@@ -1,6 +1,9 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useFullscreen } from '@vueuse/core';
+const { toggle, isFullscreen } = useFullscreen();
+</script>
 <template>
-  <i :class="'iconfont icon-fangda'" class="toolBar-icon"></i>
+  <i :class="['iconfont', isFullscreen ? 'icon-suoxiao' : 'icon-fangda']" class="toolBar-icon" @click="toggle"></i>
 </template>
 
 <style scoped></style>

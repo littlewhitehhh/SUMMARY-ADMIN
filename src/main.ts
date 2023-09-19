@@ -5,6 +5,7 @@ import App from './App.vue';
 // css样式
 import '@/style/reset.scss';
 import '@/style/common.scss';
+import '@/style/element.scss';
 
 // iconfont scss
 import '@/assets/iconfont/iconfont.scss';

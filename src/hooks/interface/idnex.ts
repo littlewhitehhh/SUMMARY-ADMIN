@@ -1,3 +1,3 @@
 export namespace Theme {
-  export type GreyOrWeakType = 'gery' | 'weak';
+  export type GreyOrWeakType = 'grey' | 'weak';
 }

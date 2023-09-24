@@ -55,4 +55,15 @@ export interface AuthState {
   authMenuList: Menu.AuthMenuListItem[];
 }
 
-//
+//tabs store
+
+export interface tabsMenuProps {
+  icon: string;
+  title: string;
+  path: string;
+  name: string;
+  close: boolean;
+}
+export interface tabsState {
+  tabsMenuLists: tabsMenuProps[];
+}

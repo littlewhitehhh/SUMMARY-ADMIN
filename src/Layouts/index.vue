@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import Aside from './components/aside/index.vue';
 import Header from './components/header/index.vue';
+import Tabs from './components/tabs/index.vue';
 import { useGlobalStore } from '@/store/modules/global';
 import { computed } from 'vue';
 const globalStore = useGlobalStore();
@@ -31,6 +32,11 @@ const asideWidth = computed(() => {
         <el-header>
           <Header></Header>
         </el-header>
+        <div class="tabs-box">
+          <Tabs></Tabs>
+          <!-- TODO more button -->
+          <el-button class="moreButton" size="small">更多</el-button>
+        </div>
         <el-main>
           <router-view></router-view>
         </el-main>
